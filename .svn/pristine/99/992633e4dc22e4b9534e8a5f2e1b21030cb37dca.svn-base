@@ -1,0 +1,98 @@
+html,
+body {
+    font-size: 14px;
+    height: 100%;
+}
+
+.hover {
+    opacity: .8;
+}
+
+.flex-wrap {
+    display: -webkit-box;
+    display: box;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flex-con {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+}
+
+.flex-vertical {
+    -webkit-box-orient: vertical;
+    -webkit-flex-flow: column;
+    flex-flow: column;
+}
+
+.border-t,
+.border-b {
+    position: relative;
+}
+
+.border-t:before,
+.border-b:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #ddd;
+    right: 0;
+    height: 1px;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+
+.border-b:after {
+    top: auto;
+    bottom: 0;
+}
+
+#wrap {
+    height: 100%;
+}
+
+#wrap {
+    background: transparent url(../image/login_bg.jpg) 0 0 no-repeat;
+    background-size: cover;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.login {
+    width: 100%;
+    height: 300px;
+}
+
+.login h3 {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.login label {
+    display: block;
+    width: 80%;
+    text-align: center;
+    margin: 15px auto;
+}
+
+.login label input {
+    width: 150px;
+    border: 1px solid #999;
+    background-color: #fff;
+}
+
+.login button {
+    display: block;
+    width: 50%;
+    height: 30px;
+    background-color: green;
+    color: #fff;
+    border: 0;
+    margin: 30px auto 0;
+}

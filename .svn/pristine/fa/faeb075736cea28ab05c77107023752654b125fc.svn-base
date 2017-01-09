@@ -1,0 +1,31 @@
+.head label {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.body {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+}
+
+.body .half {
+    width: 50%;
+}
+
+.body span {
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+    color: #fff;
+    background: #60a80f;
+    text-align: center;
+}

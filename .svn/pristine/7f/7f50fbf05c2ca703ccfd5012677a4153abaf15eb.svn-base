@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../css/list.css" />
+    <script src="../script/vue.js"></script>
+    <script src="../script/vue-router.js"></script>
+    <script src="../script/axios.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <i>返回</i>
+        <h2>查看盘点单</h2>
+    </div>
+    <div id="wrap">
+        <div class="head clearfix">
+            <label>盘点日期: <input type="date" class="date_sel"> &nbsp;-&nbsp; <input type="date" class="date_sel"></label>
+            <label>单据编号: <input type="text" class="paper_num" :value="PAPER_NUM_INPUT"><button type="button">查询</button></label>
+        </div>
+        <div class="body">
+            <ul class="pan_list">
+                <li class="list_item" v-for="item in PAN_LIST">
+                    <p><span class="list_l">单据编号:{{item.PAPER_NUM}}</span><span>盘点人:{{PAN_ID}} {{item.PAN_PERSON}}</span></p>
+                    <p><span class="list_l">盘点店铺:{{item.PAN_SHOP}}</span><span>盘点状态:{{item.PAN_STATUS}}</span></p>
+                    <p><span class="list_l">盘点日期:{{item.PAN_DATE}}</span><span>盘点差异:{{item.PAN_DIFF}}</span></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script>
+        // start app
+        var modal = new Vue({
+            el: '#wrap',
+            data: {
+                PAPER_NUM_INPUT: 5153313513,
+                PAN_LIST: [{
+                    PAPER_NUM: 5153313513,
+                    PAN_PERSON: '周骏',
+                    PAN_ID: 6052037,
+                    PAN_SHOP: '中山公园龙之梦',
+                    PAN_STATUS: '已上传',
+                    PAN_DATE: '2016/11/30',
+                    PAN_DIFF: '未拉取'
+                }, {
+                    PAPER_NUM: 5153123513,
+                    PAN_PERSON: '周二骏',
+                    PAN_SHOP: '虹口龙之梦',
+                    PAN_STATUS: '未确认',
+                    PAN_DATE: '2013/11/30',
+                    PAN_DIFF: '已拉取'
+                }, {
+                    PAPER_NUM: 12332313513,
+                    PAN_PERSON: '周三骏',
+                    PAN_SHOP: '中山公园龙之梦',
+                    PAN_STATUS: '未上传',
+                    PAN_DATE: '2016/11/30',
+                    PAN_DIFF: '未拉取'
+                }]
+            }
+        })
+    </script>
+</body>
+
+</html>

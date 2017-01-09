@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="./css/api.css" />
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <script src="./script/vue.js"></script>
+    <script src="./script/axios.js"></script>
+</head>
+
+<body>
+    <div id="wrap" class="flex-wrap">
+        <div class="login">
+            <h3>林清轩登录</h3>
+            <label>工号：<input type="text" v-model="loginName"></label>
+            <label>密码：<input type="password" v-model="code"></label>
+            <button @click="userLogin">登录</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="./script/api.js"></script>
+    <script>
+        var vm = new Vue({
+            el: '#wrap',
+            data: {
+                loginName: '',
+                code: ''
+            },
+            methods: {
+                userLogin: function() {
+                    axios.get('http://ci.sh-lei.cn/sign/test')
+                        .then(function(response) {
+                            if (response.data.code == 0) {
+                                api.openWin({
+                                    name: 'win_webpage',
+                                    url: './html/main.html',
+                                });
+                            }
+                        });
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

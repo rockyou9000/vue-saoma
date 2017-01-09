@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>Hello APP</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../css/basic.css" />
+    <!--<link rel="stylesheet" type="text/css" href="../css/list.css" />-->
+    <style>
+        .head {
+            top: 0;
+            height: 100px;
+        }
+        
+        .head h3 {
+            margin: 0;
+            font-size: 16px;
+            text-align: left;
+            background-color: #ddd;
+        }
+        
+        .head p {
+            font-size: 13px;
+        }
+        
+        .body {
+            top: 150px;
+        }
+    </style>
+    <script src="../script/vue.js"></script>
+    <script src="../script/vue-router.js"></script>
+    <script src="../script/axios.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <i>关闭</i>
+        <h2>盘点单详情</h2>
+    </div>
+    <div id="wrap">
+        <div class="head clearfix">
+            <h3>单据编号:KC65612315313</h3>
+            <p><span class="list_l">单据人工号:116070</span><span>盘点日期:2016/05/15</span></p>
+            <p><span class="list_l">盘点人姓名:周骏</span><span>盘点店铺:中山公园龙之梦</span></p>
+            <p><span class="list_l">商品总价:3053.00</span><span>实盘总数:10</span></p>
+            <p>定位:<input type="text" :value="sao_num"><button type="button" @click="sao">查询</button></p>
+        </div>
+        <div class="body">
+            <h3>商品明细</h3>
+            <ul>
+                <li>添加</li>
+                <li>删除</li>
+                <li>确认并上传</li>
+            </ul>
+            <table>
+                <thead>
+                    <th><input type="checkbox">全选</th>
+                    <th>条码</th>
+                    <th>品名</th>
+                    <th>实盘数</th>
+                    <th>账面数</th>
+                    <th>盈亏数</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>9006565816</td>
+                        <td>红石榴活颜焕彩</td>
+                        <td>5</td>
+                        <td>10</td>
+                        <td>-2</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script type="text/javascript" src="../script/api.js"></script>
+    <script>
+        // start app
+        var modal = new Vue({
+            el: '#wrap',
+            data: {
+                PAPER_NUM_INPUT: 5153313513,
+                sao_num: ''
+            },
+            methods: {
+                sao: function() {
+                    var FNScanner = api.require('FNScanner');
+                    FNScanner.openScanner({
+                        saveToAlbum: true
+                    }, function(ret, err) {
+                        if (ret) {
+                            alert(ret.JSON.stringify(ret))
+                            this.sao_num = ret.content;
+                        } else {
+                            alert(JSON.stringify(err));
+                        }
+                    });
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

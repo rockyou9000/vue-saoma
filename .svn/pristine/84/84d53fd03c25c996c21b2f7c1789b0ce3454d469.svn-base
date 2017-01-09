@@ -1,0 +1,118 @@
+/*list css*/
+
+.head {
+    font-size: 14px;
+}
+
+.head label {
+    width: 300px;
+    display: block;
+    margin: 30px auto;
+}
+
+.head .date_sel {
+    width: 100px;
+    border: 1px solid #ccc;
+}
+
+.head .paper_num {
+    width: 120px;
+    border: 1px solid #ccc;
+    margin: 0 5px;
+}
+
+.head button {
+    width: 50px;
+    height: 25px;
+    background-color: #60a80f;
+    color: #fff;
+    border: 1px solid #ccc;
+    margin-left: 15px;
+}
+
+.body .list_item {
+    font-size: 13px;
+    color: #333;
+    background-color: #f1b861;
+    margin-bottom: 5px;
+    padding: 3px;
+}
+
+.body .list_item p {
+    padding: 2px 10px;
+}
+
+.body .list_item .list_l {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+}
+
+
+/*detail css*/
+
+.detail_head,
+.detail_body {
+    font-size: 14px;
+}
+
+.detail_head {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 130px;
+}
+
+.detail_body {
+    position: absolute;
+    right: 0;
+    top: 130px;
+    left: 0;
+    height: 50px;
+}
+
+.detail_head h3,
+.detail_body h3 {
+    font-size: 16px;
+    background: #ccc;
+}
+
+.detail_head .list_l {
+    width: 50%;
+}
+
+.detail_head .filter_input input {
+    border: 1px solid #333;
+    margin: 0 6px;
+    width: 100px;
+}
+
+.detail_head .filter_input button {
+    width: 50px;
+    height: 20px;
+    background: #ccc;
+}
+
+.detail_body .edit_btn li {
+    width: 75px;
+    height: 25px;
+    line-height: 25px;
+    float: left;
+    text-align: center;
+    border: 1px solid #333;
+    background-color: red;
+}
+
+.detail_list {
+    position: absolute;
+    right: 0;
+    top: 180px;
+    bottom: 0;
+    left: 0;
+    background-color: #eee;
+    overflow: auto;
+}
+
+.detail_list table {
+    width: 100%;
+}
