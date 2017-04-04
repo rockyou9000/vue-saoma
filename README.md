@@ -1,4 +1,8 @@
-# vue-saoma
-基于vue2.0框架实现林清轩门店扫码app
+# vue-saoma-app
 
-app 编译使用APICLOUD 平台
+### 林清轩门店扫码app
+
+* vue.js 2.0
+* vue-router
+* fetch.js
+* APICloud
